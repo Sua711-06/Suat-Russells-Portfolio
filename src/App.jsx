@@ -31,7 +31,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <div>
       <Navbar  expand="lg" className="bg-body-tertiary" >
         <Container>
           <Navbar.Brand href="/">My Portfolio</Navbar.Brand>
@@ -47,7 +47,7 @@ function App() {
         </Container>
       </Navbar>
       <RouterProvider router={router} />
-    </>
+    </div>
   )
 }
 
