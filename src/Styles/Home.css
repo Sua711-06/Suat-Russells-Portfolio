@@ -41,8 +41,35 @@
 
 h1 {
     font-size: clamp(2.5rem, 8vw, 7rem);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
     text-align: center;
     color: var(--text);
     margin: 0;
     line-height: 1;
+}
+
+/* Typing effect styles */
+.typing {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.typing-text {
+    color: var(--text);
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 0.6ch;
+    height: 1em;
+    margin-left: 0.12ch;
+    background: var(--text);
+    vertical-align: bottom;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
 }

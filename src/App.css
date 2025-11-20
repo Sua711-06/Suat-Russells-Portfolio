@@ -36,3 +36,43 @@ body, html {
     background-color: var(--bg);
     color: var(--text);
 }
+
+/* View Transition styles ------------------------------------------------- */
+
+/* Give the root element a stable view-transition name so the API can target it */
+.view-transition-root {
+  view-transition-name: page;
+}
+
+/* Use the View Transitions pseudo-elements when available to animate old/new */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) .view-transition-root {
+    animation: view-fade-out 1000ms ease both;
+  }
+  ::view-transition-new(root) .view-transition-root {
+    animation: view-fade-in 1000ms ease both;
+  }
+}
+
+@keyframes view-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes view-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Fallback for browsers without the View Transitions API: JS toggles these classes */
+.view-transition-root {
+  transition: opacity 1000ms ease;
+}
+.view-transition-root.fade-in {
+  opacity: 1;
+}
+.view-transition-root.fade-out {
+  opacity: 0;
+}
+
+/* End view transition styles --------------------------------------------- */
