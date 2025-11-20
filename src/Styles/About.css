@@ -1,0 +1,158 @@
+.about-container {
+    /* Layout container fallback colors (will be overridden by variables) */
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 240ms ease, color 240ms ease;
+}
+
+/* Core theme variables: primary, secondary, tertiary for easy tweaking
+   Primary - main text / accent
+   Secondary - muted / borders
+   Tertiary - background / surfaces
+   Derived variables below reference those so changing the three values
+   will propagate across the About page. */
+:root {
+    /* Light theme base values (change these 3 to retheme quickly) */
+    --primary: #111217;   /* main text / strong accent */
+    --secondary: #6b7280; /* muted / borders */
+    --tertiary: #ffffff;  /* background / surface */
+
+    /* Derived tokens (keep these unless you need a custom override) */
+    --bg: var(--tertiary);
+    --text: var(--primary);
+    --muted: var(--secondary);
+    --card-bg: var(--tertiary);
+    --border: var(--secondary);
+    --accent: var(--primary);
+    --accent-2: var(--secondary);
+}
+
+/* Dark mode: redefine the three core variables; everything else inherits */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: rgb(190, 190, 190);   /* lighter text for dark backgrounds */
+        --secondary: rgb(112, 112, 112); /* muted / borders in dark */
+        --tertiary: rgb(22, 22, 22);  /* dark background */
+
+        /* Derived tokens update automatically from the three cores */
+        --bg: var(--tertiary);
+        --text: var(--primary);
+        --muted: var(--secondary);
+        --card-bg: var(--tertiary);
+        --border: var(--secondary);
+        --accent: var(--primary);
+        --accent-2: var(--secondary);
+    }
+}
+
+/* Common element styles for about page */
+.about-container h1,
+.about-container h2,
+.about-container h3 {
+    color: var(--accent);
+}
+
+.about-container p {
+    color: var(--text);
+    margin-bottom: 0.9rem;
+}
+
+.about-container .border-5 {
+    /* force border color to the theme border while keeping bootstrap width */
+    border-color: var(--border) !important;
+}
+
+.about-container .rounded-5 {
+    background: var(--card-bg);
+}
+
+.about-container .card {
+    background: linear-gradient(180deg, var(--card-bg), var(--bg));
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.about-container .carousel,
+.about-container .carousel .carousel-item img {
+    background: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.about-container hr {
+    border-color: var(--border) !important;
+}
+
+.about-container .w-75 {
+    border-color: var(--border) !important;
+}
+
+/* Image specific: ensure rounded circle images keep object-fit in both themes */
+.about-container img {
+    object-fit: cover;
+    background: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+/* Utility: muted text color */
+.about-container .text-muted,
+.about-container small {
+    color: var(--muted) !important;
+}
+
+/* Ensure cards and panels have subtle shadow in light mode and subtle glow in dark */
+.about-container .card,
+.about-container .rounded-5 {
+    box-shadow: 0 4px 10px rgba(16,22,26,0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+    .about-container .card,
+    .about-container .rounded-5 {
+        box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    }
+}
+
+/* Small helpers used by the About layout */
+.about-container .border-3 {
+    border-color: var(--border) !important;
+}
+
+.about-container .p-4 {
+    /* respect theme background inside inner containers */
+    background: transparent;
+}
+
+/* Make sure hr used as separators are visible in both themes */
+.about-container hr.border-5 {
+    height: 3px;
+    background: var(--border);
+}
+
+/* Heading accent color for stat numbers */
+.about-container .stat-number h3,
+.about-container .card-text h3,
+.about-container .card-text {
+    color: var(--accent);
+}
+
+/* Smooth color transitions for large areas */
+.about-container,
+.about-container .card,
+.about-container .rounded-5,
+.about-container img {
+    transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+/* Fine-tune carousel caption colors */
+.about-container .carousel-caption h3,
+.about-container .carousel-caption p {
+    color: var(--text);
+}
+
+/* Ensure links / badges stand out against both backgrounds */
+.about-container a,
+.about-container .badge {
+    color: var(--accent) !important;
+}

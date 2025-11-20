@@ -1,53 +1,47 @@
 import './App.css'
+import LogoLight from './assets/SuatLight.svg';
+import LogoDark from './assets/SuatDark.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Routes, Route, NavLink } from 'react-router-dom';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/Projects",
-    element: <Projects />
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
-  {
-    path: "*", // Catches all unmatched paths
-    element: <NoPage />,
-  },
-]);
+import About from './pages/About';
 
 function App() {
+  const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const logoSrc = isDarkMode ? LogoDark : LogoLight;
+
   return (
-    <div>
-      <Navbar  expand="lg" className="bg-body-tertiary" >
-        <Container>
-          <Navbar.Brand href="/">My Portfolio</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/about">About</Nav.Link>
-              <Nav.Link href="/projects">Projects</Nav.Link>
-              <Nav.Link href="/contact">Contact</Nav.Link>
+    <Container fluid className="p-0 m-0">
+      <Navbar bg={isDarkMode ? "dark" : "light"} variant={isDarkMode ? "dark" : "light"} expand="lg" sticky="top">
+        <Container fluid className="p-2 px-4">
+          <Navbar.Brand as={NavLink} to="/" >
+            <img src={logoSrc} alt="Suat Russell Logo" style={{height: '3rem'}}/>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="main-navbar" />
+          <Navbar.Collapse id="main-navbar">
+            <Nav className="ms-auto h3">
+              <Nav.Link as={NavLink} to="/" end>Home</Nav.Link>
+              <Nav.Link as={NavLink} to="/about">About</Nav.Link>
+              <Nav.Link as={NavLink} to="/projects">Projects</Nav.Link>
+              <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <RouterProvider router={router} />
-    </div>
+
+      <Container fluid className="p-0 m-0">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </Container>
+    </Container>
   )
 }
 

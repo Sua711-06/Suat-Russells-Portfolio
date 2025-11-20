@@ -14,14 +14,11 @@
     --accent-2: var(--secondary);
 }
 
-/* Dark mode: redefine the three core variables; everything else inherits */
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary: rgb(190, 190, 190);   /* lighter text for dark backgrounds */
-        --secondary: rgb(112, 112, 112); /* muted / borders in dark */
-        --tertiary: rgb(22, 22, 22);  /* dark background */
-
-        /* Derived tokens update automatically from the three cores */
+        --primary: rgb(190, 190, 190);
+        --secondary: rgb(112, 112, 112);
+        --tertiary: rgb(22, 22, 22);
         --bg: var(--tertiary);
         --text: var(--primary);
         --muted: var(--secondary);
@@ -29,10 +26,23 @@
         --border: var(--secondary);
         --accent: var(--primary);
         --accent-2: var(--secondary);
+        --navbar-height: 100px;
     }
 }
 
-body, html {
+.home-container {
     background-color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - var(--navbar-height, 56px));
+    padding: 2rem;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 8vw, 7rem);
+    text-align: center;
     color: var(--text);
+    margin: 0;
+    line-height: 1;
 }

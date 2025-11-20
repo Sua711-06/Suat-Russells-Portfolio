@@ -1,9 +1,11 @@
+import { Container } from 'react-bootstrap';
+import '../Styles/Home.css';
+
 function Home() {
     return (
-        <div>
-            <h1>Welcome to My Portfolio</h1>
-            <p>This is the home page of my personal portfolio website.</p>
-        </div>
+        <Container fluid className='home-container'>
+            <h1>Suat Russell</h1>
+        </Container>
     );
 }
 

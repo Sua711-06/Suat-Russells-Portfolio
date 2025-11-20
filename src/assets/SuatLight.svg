@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1.9999999in"
+   height="2in"
+   viewBox="0 0 50.799998 50.8"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <path
+       style="font-variation-settings:'wght' 700;fill:none;stroke:#000000;stroke-width:5.08;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.5;stroke-dasharray:none"
+       d="m 19.788115,20.412064 c 2.22839,2.406663 8.974517,-2.422419 9.448378,-6.15036 C 29.891496,9.1086828 23.888665,3.2651202 18.718487,2.7632052 12.099912,2.1206814 3.2695141,6.4564667 2.6740695,14.618247 1.9814638,24.111815 7.9330727,30.127852 16.935774,29.593038"
+       id="path1" />
+    <path
+       style="font-variation-settings:'wght' 700;fill:none;stroke:#000000;stroke-width:5.08;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.5;stroke-dasharray:none"
+       d="m 7.2199878,28.256001 c 0,0 -5.3525032,3.30087 -4.5459182,10.874551 0.9679954,9.089294 11.1181324,9.380082 17.7379954,9.002699 5.545211,-0.31612 12.4639,-2.698332 13.905161,-9.18097 0.982984,-4.421358 0.713085,-10.607143 -7.57653,-17.648859"
+       id="path2" />
+    <path
+       style="font-variation-settings:'wght' 700;fill:none;stroke:#000000;stroke-width:5.08;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.5;stroke-dasharray:none"
+       d="m 31.19748,25.581932 17.02491,6.863446 -13.816029,6.150361 13.816028,9.537514"
+       id="path3" />
+    <path
+       style="font-variation-settings:'wght' 700;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:5.08;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.5;stroke-dasharray:none"
+       d="M 31.108342,19.788114 47.687574,6.15036 c 0,0 -7.754801,18.807623 -7.843936,18.183674 C 39.754498,23.710084 36.189075,6.5069028 36.189075,6.5069028 L 48.222387,17.916266 Z"
+       id="path4" />
+  </g>
+</svg>
