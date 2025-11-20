@@ -1,6 +1,5 @@
 import './App.css'
-import LogoLight from './assets/SuatLight.svg';
-import LogoDark from './assets/SuatDark.svg';
+import {LogoLight, LogoDark} from './assets/index.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { Routes, Route, NavLink } from 'react-router-dom';
@@ -15,24 +14,24 @@ function App() {
 
   return (
     <Container fluid className="p-0 m-0">
-      <Navbar bg={isDarkMode ? "dark" : "light"} variant={isDarkMode ? "dark" : "light"} expand="lg" sticky="top">
-        <Container fluid className="p-2 px-4">
+      <Navbar bg={isDarkMode ? "dark" : "light"} variant={isDarkMode ? "dark" : "light"} expand="lg" sticky="top" style={{width: '100vw'}}>
+        <Container fluid  className="p-2 px-4 w-100">
           <Navbar.Brand as={NavLink} to="/" >
             <img src={logoSrc} alt="Suat Russell Logo" style={{height: '3rem'}}/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="main-navbar" />
           <Navbar.Collapse id="main-navbar">
             <Nav className="ms-auto h3">
-              <Nav.Link as={NavLink} to="/" end>Home</Nav.Link>
-              <Nav.Link as={NavLink} to="/about">About</Nav.Link>
-              <Nav.Link as={NavLink} to="/projects">Projects</Nav.Link>
-              <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
+              <Nav.Link as={NavLink} to="/" end>Home</Nav.Link> |
+              <Nav.Link as={NavLink} to="/about">About Me</Nav.Link> |
+              <Nav.Link as={NavLink} to="/projects">My Projects and Work</Nav.Link> |
+              <Nav.Link as={NavLink} to="/contact">Contact Me</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <Container fluid className="p-0 m-0">
+      <Container fluid className="p-0 m-0" style={{width: '100vw'}}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />

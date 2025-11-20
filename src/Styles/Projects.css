@@ -1,0 +1,50 @@
+:root {
+    /* Light theme base values (change these 3 to retheme quickly) */
+    --primary: #111217;   /* main text / strong accent */
+    --secondary: #6b7280; /* muted / borders */
+    --tertiary: #ffffff;  /* background / surface */
+
+    /* Derived tokens (keep these unless you need a custom override) */
+    --bg: var(--tertiary);
+    --text: var(--primary);
+    --muted: var(--secondary);
+    --card-bg: var(--tertiary);
+    --border: var(--secondary);
+    --accent: var(--primary);
+    --accent-2: var(--secondary);
+}
+
+/* Dark mode: redefine the three core variables; everything else inherits */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: rgb(190, 190, 190);   /* lighter text for dark backgrounds */
+        --secondary: rgb(112, 112, 112); /* muted / borders in dark */
+        --tertiary: rgb(22, 22, 22);  /* dark background */
+
+        /* Derived tokens update automatically from the three cores */
+        --bg: var(--tertiary);
+        --text: var(--primary);
+        --muted: var(--secondary);
+        --card-bg: var(--tertiary);
+        --border: var(--secondary);
+        --accent: var(--primary);
+        --accent-2: var(--secondary);
+    }
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--text);
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+.projects-container {
+    background: var(--bg);
+    color: var(--text);
+}
